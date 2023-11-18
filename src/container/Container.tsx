@@ -2,10 +2,10 @@ import Navbar from "./Navbar";
 
 const Container = ({ children }: { children: React.ReactNode }) => {
   return (
-    <>
+    <section className="flex">
       <Navbar />
-      <section className="flex-1 min-h-screen">{children}</section>
-    </>
+      <main className="flex-1 min-h-screen">{children}</main>
+    </section>
   );
 };
 
