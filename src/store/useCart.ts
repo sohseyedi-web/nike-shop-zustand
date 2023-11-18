@@ -5,6 +5,7 @@ import { persist } from "zustand/middleware";
 interface CartState {
   cartItems: CartProduct[];
   addItemToCart: (item: ProductsListType) => void;
+  removeItemFromCart: (productId: string) => void;
 }
 
 export const useCartStore = create(
@@ -25,6 +26,25 @@ export const useCartStore = create(
           set({ cartItems: [...get().cartItems] });
         } else {
           set({ cartItems: [...get().cartItems, { ...item, quantity: 1 }] });
+        }
+      },
+      removeItemFromCart: (productId) => {
+        const itemExists = get().cartItems.find(
+          (cartItem) => cartItem.id === productId
+        );
+
+        if (itemExists) {
+          if (typeof itemExists.quantity === "number") {
+            if (itemExists.quantity === 1) {
+              const updatedCartItems = get().cartItems.filter(
+                (item) => item.id !== productId
+              );
+              set({ cartItems: updatedCartItems });
+            } else {
+              itemExists.quantity--;
+              set({ cartItems: [...get().cartItems] });
+            }
+          }
         }
       },
     }),
