@@ -2,6 +2,7 @@ import { ProductsListType } from "../../types/type";
 import * as RiIcon from "react-icons/ri";
 import { useCartStore } from "./../../store/useCart";
 import { checkInCart } from "../../utils/checkInCart";
+import { toPersianNumbersWithComma } from './../../utils/comma';
 
 const ProductList = ({ product }: { product: ProductsListType }) => {
   const { addItemToCart, cartItems, removeItemFromCart } = useCartStore();
@@ -27,7 +28,7 @@ const ProductList = ({ product }: { product: ProductsListType }) => {
         {product.name}-{" "}
         <span>{product.gender === "men" ? "مردانه" : "زنانه"}</span>
       </h2>
-      <h6 className="my-2 text-lg ">قیمت : {product.price}</h6>
+      <h6 className="my-2 text-lg ">قیمت : {toPersianNumbersWithComma(product.price)} تومان</h6>
 
       <div className="my-2 flex items-center gap-x-2 text-lg font-semibold">
         سایز :

@@ -2,7 +2,7 @@ export type ProductsListType = {
   id: string;
   img: string;
   name: string;
-  price: number;
+  price: string;
   gender: string;
   size: string[];
   oneColor: string;
