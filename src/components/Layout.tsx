@@ -6,7 +6,7 @@ const Layout = () => {
   console.log(cartItems);
 
   return (
-    <div>
+    <div className="min-h-screen bg-green-400">
       {productList.map((product) => (
         <div className="w-1/4" key={product.id}>
           <h3>{product.name}</h3>
