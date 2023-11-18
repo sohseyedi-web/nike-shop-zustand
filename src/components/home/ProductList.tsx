@@ -5,7 +5,7 @@ import { checkInCart } from "../../utils/checkInCart";
 import { toPersianNumbersWithComma } from './../../utils/comma';
 
 const ProductList = ({ product }: { product: ProductsListType }) => {
-  const { addItemToCart, cartItems, removeItemFromCart } = useCartStore();
+  const { addItemToCart, cartItems } = useCartStore();
 
   return (
     <div
@@ -40,11 +40,12 @@ const ProductList = ({ product }: { product: ProductsListType }) => {
       </div>
       <div className="flex items-center justify-between">
         {checkInCart(cartItems, product) ? (
-          <div className="flex items-center gap-x-2">
-            <button onClick={() => addItemToCart(product)}>+</button>
-            <span>0</span>
-            <button onClick={() => removeItemFromCart(product.id)}>-</button>
-          </div>
+          <button
+          onClick={() => addItemToCart(product)}
+          className="h-[45px] w-[45%] font-semibold text-gray-200 rounded-xl border-none bg-green-600"
+        >
+          موجود در سبد
+        </button>
         ) : (
           <button
             onClick={() => addItemToCart(product)}
