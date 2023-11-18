@@ -2,7 +2,7 @@ import * as RiIcon from "react-icons/ri";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <aside className="h-screen w-12 border-l border-gray-300 z-20">
+    <aside className="min-h-screen w-12 border-l border-gray-300 bg-gray-50 z-20">
       <div className="px-5 py-7 flex items-center flex-col justify-between">
         <div>
           <RiIcon.RiXingLine size={26} />

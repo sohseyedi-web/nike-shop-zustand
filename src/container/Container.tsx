@@ -4,7 +4,7 @@ const Container = ({ children }: { children: React.ReactNode }) => {
   return (
     <section className="flex">
       <Navbar />
-      <main className="flex-1 min-h-screen">{children}</main>
+      <main className="h-screen flex-1 overflow-y-auto">{children}</main>
     </section>
   );
 };
