@@ -1,10 +1,10 @@
 import { ProductsListType } from "../../types/type";
 import * as RiIcon from "react-icons/ri";
-import { useCartStore } from './../../store/useCart';
+import { useCartStore } from "./../../store/useCart";
+import { checkInCart } from "../../utils/checkInCart";
 
 const ProductList = ({ product }: { product: ProductsListType }) => {
-
-    const {addItemToCart} = useCartStore()
+  const { addItemToCart, cartItems, removeItemFromCart } = useCartStore();
 
   return (
     <div
@@ -38,9 +38,21 @@ const ProductList = ({ product }: { product: ProductsListType }) => {
         ))}
       </div>
       <div className="flex items-center justify-between">
-        <button onClick={() => addItemToCart(product)} className="h-[45px] w-[45%] font-semibold text-gray-200 rounded-xl border-none bg-indigo-600">
-          افزودن به سبد خرید
-        </button>
+        {checkInCart(cartItems, product) ? (
+          <div className="flex items-center gap-x-2">
+            <button onClick={() => addItemToCart(product)}>+</button>
+            <span>0</span>
+            <button onClick={() => removeItemFromCart(product.id)}>-</button>
+          </div>
+        ) : (
+          <button
+            onClick={() => addItemToCart(product)}
+            className="h-[45px] w-[45%] font-semibold text-gray-200 rounded-xl border-none bg-indigo-600"
+          >
+            افزودن به سبد خرید
+          </button>
+        )}
+
         <div className="flex items-center justify-center gap-x-4  text-indigo-600 ">
           <span className="cursor-pointer shadow hover:scale-110 transition-all duration-300">
             <RiIcon.RiHeart2Line size={26} />
