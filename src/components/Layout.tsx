@@ -1,9 +1,8 @@
 import { productList } from "./../utils/dataList";
 import { useCartStore } from "./../store/useCart";
 const Layout = () => {
-  const { cartItems,addItemToCart } = useCartStore();
+  const { addItemToCart } = useCartStore();
 
-  console.log(cartItems);
 
   return (
     <div className="min-h-screen bg-green-400">
