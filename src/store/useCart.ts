@@ -4,14 +4,17 @@ import { persist } from "zustand/middleware";
 
 interface CartState {
   cartItems: CartProduct[];
+  searchTerm: string;
   addItemToCart: (item: ProductsListType) => void;
   removeItemFromCart: (productId: string) => void;
+  setSearchTerm: (item: string) => void;
 }
 
 export const useCartStore = create(
   persist<CartState>(
     (set, get) => ({
       cartItems: [],
+      searchTerm: "",
 
       addItemToCart: (item) => {
         const itemExists = get().cartItems.find(
@@ -47,6 +50,7 @@ export const useCartStore = create(
           }
         }
       },
+      setSearchTerm: (item) => set({ searchTerm: item }),
     }),
     {
       name: "cart-items",

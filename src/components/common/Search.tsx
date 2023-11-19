@@ -1,6 +1,9 @@
 import * as RiIcon from "react-icons/ri";
+import { useCartStore } from "./../../store/useCart";
 
 const Search = () => {
+  const { searchTerm, setSearchTerm } = useCartStore();
+
   return (
     <form className="lg:w-[400px] w-full h-[45px] shadow rounded-xl outline-none bg-gray-50 relative">
       <span className="absolute right-2 top-2 text-indigo-500">
@@ -8,6 +11,8 @@ const Search = () => {
       </span>
       <input
         type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
         className="w-full h-full pr-10 rounded-xl bg-transparent transition-all duration-200 focus:border-indigo-400 outline-none border-2"
         placeholder="جستجو محصولات"
       />
