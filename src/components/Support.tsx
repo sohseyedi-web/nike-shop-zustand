@@ -35,10 +35,12 @@ const Support = () => {
           placeholder="سهیل سیدی"
           className="w-full h-[45px] px-1 rounded-xl shadow-sm transition-all duration-200 focus:border-indigo-400 outline-none border-2"
         />
-        {errors.fullName && <span className="text-red-500 my-1">نام الزامی است</span>}
+        {errors.fullName && (
+          <span className="text-red-500 my-1">نام الزامی است</span>
+        )}
       </div>
       <div className="w-full">
-        <label className="mb-2 font-semibold" htmlFor="">
+        <label className="mb-2 block font-semibold" htmlFor="">
           ایمیل
         </label>
         <input
@@ -48,11 +50,15 @@ const Support = () => {
           placeholder="example@gmail.com"
           className="w-full h-[45px] px-1 rounded-xl shadow-sm transition-all duration-200 focus:border-indigo-400 outline-none border-2"
         />
-        {errors.email?.type === "required" && <span className="text-red-500 my-1">ایمیل الزامی است</span>}
-        {errors.email?.type === "pattern" && <span className="text-red-500 my-1">ایمیل معتبر نیست</span>}
+        {errors.email?.type === "required" && (
+          <span className="text-red-500 my-1">ایمیل الزامی است</span>
+        )}
+        {errors.email?.type === "pattern" && (
+          <span className="text-red-500 my-1">ایمیل معتبر نیست</span>
+        )}
       </div>
       <div className="w-full">
-        <label className="mb-2 font-semibold" htmlFor="">
+        <label className="mb-2 block font-semibold" htmlFor="">
           ارتباط با{" "}
         </label>
 
@@ -64,9 +70,12 @@ const Support = () => {
           <option value="sell">فروش</option>
           <option value="accounting">حسابداری</option>
         </select>
+        {errors.fullName && (
+          <span className="text-red-500 my-1">قسمتی انتخاب نکردید</span>
+        )}
       </div>
       <div className="w-full">
-        <label className="mb-2 font-semibold" htmlFor="">
+        <label className="mb-2 block font-semibold" htmlFor="">
           توضیحات
         </label>
         <textarea
