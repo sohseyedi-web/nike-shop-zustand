@@ -33,7 +33,7 @@ const Support = () => {
           type="text"
           {...register("fullName", { required: true })}
           placeholder="سهیل سیدی"
-          className="w-full h-[45px] px-1 rounded-xl shadow-sm transition-all duration-200 focus:border-indigo-400 outline-none border-2"
+          className="textField"
         />
         {errors.fullName && (
           <span className="text-red-500 my-1">نام الزامی است</span>
@@ -48,7 +48,7 @@ const Support = () => {
           {...register("email", { required: true })}
           type="email"
           placeholder="example@gmail.com"
-          className="w-full h-[45px] px-1 rounded-xl shadow-sm transition-all duration-200 focus:border-indigo-400 outline-none border-2"
+          className="textField"
         />
         {errors.email?.type === "required" && (
           <span className="text-red-500 my-1">ایمیل الزامی است</span>
@@ -64,7 +64,7 @@ const Support = () => {
 
         <select
           {...register("options", { required: true })}
-          className="w-full px-1 h-[45px] rounded-xl shadow-sm transition-all duration-200 focus:border-indigo-400 outline-none border-2"
+          className="textField"
         >
           <option value="khadamat">خدمات</option>
           <option value="sell">فروش</option>
@@ -81,13 +81,10 @@ const Support = () => {
         <textarea
           {...register("message")}
           placeholder="در صورت تمایل توضیحاتی درباره درخواست خود بنویسید"
-          className="w-full p-1 resize-none h-[145px] rounded-xl shadow-sm transition-all duration-200 focus:border-indigo-400 outline-none border-2"
+          className="textField h-[150px] resize-none"
         />
       </div>
-      <button
-        disabled={!isDirty}
-        className="border w-full h-[45px] rounded-xl bg-green-500 text-white text-lg font-semibold transition-all duration-300 hover:bg-green-700"
-      >
+      <button disabled={!isDirty} className="btnForm">
         ثبت درخواست
       </button>
     </FormCard>

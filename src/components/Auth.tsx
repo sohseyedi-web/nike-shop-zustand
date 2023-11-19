@@ -34,15 +34,15 @@ const Auth = () => {
           type="text"
           {...register("phone", { required: true, minLength: 11 })}
           placeholder="سهیل سیدی"
-          className="w-full h-[45px] px-1 rounded-xl shadow-sm transition-all duration-200 focus:border-indigo-400 outline-none border-2"
+          className="textField"
         />
         {errors.phone && (
           <span className="text-red-500 my-1">شماره موبایل را وارد کنید</span>
         )}
       </div>
       <div className="w-full">
-      <label className="mb-2 block font-semibold" htmlFor="">
-          کد 
+        <label className="mb-2 block font-semibold" htmlFor="">
+          کد
         </label>
         <OTPInput
           value={otp}
@@ -56,7 +56,7 @@ const Auth = () => {
             "&:focus": {
               border: "2px solid rgb(129 140 248)",
             },
-            borderRadius: "0.5rem",
+            borderRadius: "0.75rem",
             fontSize: "1.2rem",
             outline: "none",
           }}
@@ -64,10 +64,7 @@ const Auth = () => {
           renderInput={(props: any) => <input type="number" {...props} />}
         />
       </div>
-      <button
-        disabled={!isDirty}
-        className="border w-full h-[45px] rounded-xl bg-green-500 text-white text-lg font-semibold transition-all duration-300 hover:bg-green-700"
-      >
+      <button disabled={!isDirty} className="btnForm">
         درخواست کد
       </button>
     </FormCard>
