@@ -18,7 +18,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="my-10 transition-all scale-1 duration-500 hover:transition-all hover:scale-125 hover:duration-500 ">
-            <Link to={"/products"}>
+            <Link to={"/auth"}>
               <RiIcon.RiUser3Line size={26} />
             </Link>
           </div>
