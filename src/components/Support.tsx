@@ -81,7 +81,7 @@ const Support = () => {
         <textarea
           {...register("message")}
           placeholder="در صورت تمایل توضیحاتی درباره درخواست خود بنویسید"
-          className="textField h-[150px] resize-none"
+          className="textField h-[150px] resize-none p-1"
         />
       </div>
       <button disabled={!isDirty} className="btnForm">
