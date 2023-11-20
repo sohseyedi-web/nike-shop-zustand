@@ -5,9 +5,11 @@ import { persist } from "zustand/middleware";
 interface CartState {
   cartItems: CartProduct[];
   searchTerm: string;
+  activeTheme: boolean;
   addItemToCart: (item: ProductsListType) => void;
   removeItemFromCart: (productId: string) => void;
   setSearchTerm: (item: string) => void;
+  toggleTheme: () => void;
 }
 
 export const useCartStore = create(
@@ -15,6 +17,7 @@ export const useCartStore = create(
     (set, get) => ({
       cartItems: [],
       searchTerm: "",
+      activeTheme: false,
 
       addItemToCart: (item) => {
         const itemExists = get().cartItems.find(
@@ -51,6 +54,7 @@ export const useCartStore = create(
         }
       },
       setSearchTerm: (item) => set({ searchTerm: item }),
+      toggleTheme: () => set((state) => ({ activeTheme: !state.activeTheme })),
     }),
     {
       name: "cart-items",

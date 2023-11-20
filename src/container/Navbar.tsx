@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { toPersianNumbers } from "../utils/comma";
 import { useCartStore } from "./../store/useCart";
 const Navbar = () => {
-  const { cartItems } = useCartStore();
+  const { cartItems, activeTheme, toggleTheme } = useCartStore();
 
   return (
-    <aside className="min-h-screen w-12 border-l border-gray-300 bg-gray-50 z-20">
-      <div className="px-5 py-7 flex items-center flex-col justify-between">
+    <aside className="min-h-screen w-12 border-l border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-slate-900 z-20">
+      <div className="px-5 py-7 flex items-center flex-col justify-between dark:text-white">
         <div>
           <RiIcon.RiXingLine size={26} />
         </div>
@@ -38,8 +38,15 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-8 hover:rotate-[260deg] cursor-pointer rotate-0 transition-all duration-300">
-          <RiIcon.RiMoonLine size={26} />
+        <div
+          onClick={toggleTheme}
+          className="absolute bottom-8 hover:rotate-[260deg] cursor-pointer rotate-0 transition-all duration-300"
+        >
+          {activeTheme ? (
+            <RiIcon.RiSunLine size={26} />
+          ) : (
+            <RiIcon.RiMoonLine size={26} />
+          )}
         </div>
       </div>
     </aside>

@@ -22,11 +22,11 @@ const Auth = () => {
 
   return (
     <FormCard onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex items-center gap-x-2 text-indigo-600 ">
+      <div className="flex items-center gap-x-2 text-indigo-600 dark:text-indigo-100">
         <RiIcon.RiUser6Line size={30} />
         <h6 className="text-lg font-semibold">ورود / ثبت نام</h6>
       </div>
-      <div className="w-full">
+      <div className="w-full dark:text-indigo-100">
         <label className="mb-2 block font-semibold" htmlFor="">
           شماره موبایل
         </label>
@@ -40,7 +40,7 @@ const Auth = () => {
           <span className="text-red-500 my-1">شماره موبایل را وارد کنید</span>
         )}
       </div>
-      <div className="w-full">
+      <div className="w-full dark:text-indigo-100">
         <label className="mb-2 block font-semibold" htmlFor="">
           کد
         </label>
@@ -60,7 +60,7 @@ const Auth = () => {
             fontSize: "1.2rem",
             outline: "none",
           }}
-          containerStyle="flex flex-row-reverse items-center gap-x-2 justify-between border "
+          containerStyle="flex flex-row-reverse items-center gap-x-2 justify-between"
           renderInput={(props: any) => <input type="number" {...props} />}
         />
       </div>

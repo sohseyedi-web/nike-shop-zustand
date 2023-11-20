@@ -8,7 +8,7 @@ const FormCard = ({ children, onSubmit }: PropsType) => {
     <section className="flex items-center justify-center h-full">
       <form
         onSubmit={onSubmit}
-        className="space-y-4 lg:w-[35%] p-3 md:w-[75%] w-[95%] shadow rounded-xl border border-gray-200 flex items-center justify-center flex-col"
+        className="space-y-4 lg:w-[35%] p-3 md:w-[75%] w-[95%] shadow rounded-xl border border-gray-200 dark:border-gray-700 flex items-center justify-center flex-col"
       >
         {children}
       </form>

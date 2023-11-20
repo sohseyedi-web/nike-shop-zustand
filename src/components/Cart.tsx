@@ -20,23 +20,23 @@ const Cart = () => {
 
   return (
     <section className="py-7">
-      <div className="max-w-7xl mx-auto flex justify-between lg:flex-row flex-col">
+      <div className="max-w-7xl mx-auto flex justify-between lg:flex-row gap-y-3 flex-col">
         {hasItems ? (
           <>
-            <div className="lg:w-[75%] lg:mx-0 mx-auto md:w-[60%] w-[90%] shadow rounded-xl border-2 p-3">
+            <div className="lg:w-[75%] lg:mx-0 mx-auto md:w-[60%] w-[90%] shadow rounded-xl border-2 dark:border-gray-700 p-3">
               <div className="flex items-center  justify-between">
-                <h3 className="text-xl font-semibold text-indigo-600 ">
+                <h3 className="text-xl font-semibold text-indigo-600  dark:text-indigo-100">
                   سبد خرید
                 </h3>
                 <button>
-                  <RiIcon.RiDeleteBin5Line size={28} className="text-red-600" />
+                  <RiIcon.RiDeleteBin5Line size={28} className="text-red-600 dark:text-red-500" />
                 </button>
               </div>
-              <hr className="my-3" />
+              <hr className="my-3 dark:border-gray-700" />
 
               {cartItems.map((cart) => (
                 <div
-                  className="mb-3 flex items-center justify-between"
+                  className="mb-3 flex items-center justify-between dark:text-indigo-100"
                   key={cart.id}
                 >
                   <div className="flex items-center">
@@ -56,7 +56,7 @@ const Cart = () => {
                 </div>
               ))}
             </div>
-            <div className="shadow-md lg:mx-0 mx-auto h-[220px] px-2 py-3 lg:w-[23%] md:w-[60%] w-[90%]">
+            <div className="shadow lg:mx-0 mx-auto border dark:border-gray-700 rounded-xl dark:text-indigo-100 h-[230px] p-3 lg:w-[23%] md:w-[60%] w-[90%]">
               <div className="flex items-center justify-between mb-4">
                 <span className="font-semibold capitalize">جمع خرید</span>
                 <span>{toPersianNumbersWithComma(String(totalPrice))}</span>
@@ -73,7 +73,7 @@ const Cart = () => {
                 <span className="font-semibold capitalize">قیمت نهایی</span>
                 <span>{toPersianNumbersWithComma(String(totalPrice))}</span>
               </div>
-              <button className="btnForm">Submit</button>
+              <button className="btnForm">پرداخت فاکتور</button>
             </div>
           </>
         ) : (

@@ -21,12 +21,12 @@ const Support = () => {
 
   return (
     <FormCard onSubmit={handleSubmit(onSubmit)}>
-      <div className="flex items-center gap-x-2 text-indigo-600 ">
+      <div className="flex items-center gap-x-2 text-indigo-600 dark:text-indigo-100">
         <RiIcon.RiCustomerService2Line size={30} />
         <h6 className="text-lg font-semibold">پشتیبانی</h6>
       </div>
       <div className="w-full">
-        <label className="mb-2 font-semibold" htmlFor="">
+        <label className="mb-2 block dark:text-indigo-100 font-semibold" htmlFor="">
           نام و نام خانوادگی
         </label>
         <input
@@ -40,7 +40,7 @@ const Support = () => {
         )}
       </div>
       <div className="w-full">
-        <label className="mb-2 block font-semibold" htmlFor="">
+        <label className="mb-2 block dark:text-indigo-100  font-semibold" htmlFor="">
           ایمیل
         </label>
         <input
@@ -58,7 +58,7 @@ const Support = () => {
         )}
       </div>
       <div className="w-full">
-        <label className="mb-2 block font-semibold" htmlFor="">
+        <label className="mb-2 block dark:text-indigo-100 font-semibold" htmlFor="">
           ارتباط با{" "}
         </label>
 
@@ -75,7 +75,7 @@ const Support = () => {
         )}
       </div>
       <div className="w-full">
-        <label className="mb-2 block font-semibold" htmlFor="">
+        <label className="mb-2 block dark:text-indigo-100 font-semibold" htmlFor="">
           توضیحات
         </label>
         <textarea

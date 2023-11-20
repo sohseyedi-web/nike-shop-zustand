@@ -7,7 +7,7 @@ const IncorDecBtn = ({ cart }: { cart: CartProduct }) => {
   const { addItemToCart, removeItemFromCart } = useCartStore();
 
   return (
-    <div className="flex items-center gap-x-1 p-1 border rounded-xl">
+    <div className="flex items-center gap-x-1 p-1 border dark:border-gray-700 rounded-xl">
       <button
         className="w-[35px] flex items-center justify-center text-white text-center h-[35px] border-none rounded-xl  bg-green-500"
         onClick={() => addItemToCart(cart)}

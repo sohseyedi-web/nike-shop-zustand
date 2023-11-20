@@ -10,7 +10,7 @@ const ProductList = ({ product }: { product: ProductsListType }) => {
   return (
     <div
       key={product.id}
-      className="lg:w-[32%] md:w-[45%] w-[95%] p-2 lg:mx-0 mx-auto border border-gray-300 shadow rounded-xl"
+      className="lg:w-[32%] md:w-[45%] w-[95%] p-2 lg:mx-0 mx-auto border border-gray-300 dark:border-slate-700 shadow rounded-xl dark:text-indigo-100"
     >
       <div
         className="p-1 w-full h-[150px] py-2 rounded-xl"
@@ -33,7 +33,7 @@ const ProductList = ({ product }: { product: ProductsListType }) => {
       <div className="my-2 flex items-center gap-x-2 text-lg font-semibold">
         سایز :
         {product.size.map((s) => (
-          <p className="w-[30px] text-base font-normal h-[30px] text-white m-0 rounded-full bg-blue-500 flex items-center justify-center">
+          <p className="w-[30px] text-base font-normal h-[30px] text-white m-0 rounded-full bg-blue-500 dark:bg-gray-700 flex items-center justify-center">
             {s}
           </p>
         ))}
@@ -49,13 +49,13 @@ const ProductList = ({ product }: { product: ProductsListType }) => {
         ) : (
           <button
             onClick={() => addItemToCart(product)}
-            className="h-[45px] w-[45%] font-semibold text-gray-200 rounded-xl border-none bg-indigo-600"
+            className="h-[45px] w-[45%] font-semibold text-gray-200 rounded-xl border-none bg-indigo-600 dark:bg-gray-700"
           >
             افزودن به سبد خرید
           </button>
         )}
 
-        <div className="flex items-center justify-center gap-x-4  text-indigo-600 ">
+        <div className="flex items-center justify-center gap-x-4  text-indigo-600 dark:text-indigo-100">
           <span className="cursor-pointer shadow hover:scale-110 transition-all duration-300">
             <RiIcon.RiHeart2Line size={26} />
           </span>
