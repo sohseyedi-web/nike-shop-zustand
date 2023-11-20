@@ -23,15 +23,20 @@ export const useCartStore = create(
         const itemExists = get().cartItems.find(
           (cartItem) => cartItem.id === item.id
         );
+        
 
         if (itemExists) {
           if (typeof itemExists.quantity === "number") {
             itemExists.quantity++;
           }
 
-          set({ cartItems: [...get().cartItems] });
+          set({
+            cartItems: [...get().cartItems],
+          });
         } else {
-          set({ cartItems: [...get().cartItems, { ...item, quantity: 1 }] });
+          set({
+            cartItems: [...get().cartItems, { ...item, quantity: 1 }],
+          });
         }
       },
       removeItemFromCart: (productId) => {

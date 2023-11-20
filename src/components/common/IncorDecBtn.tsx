@@ -3,7 +3,7 @@ import * as RiIcon from "react-icons/ri";
 import { toPersianNumbersWithComma } from "../../utils/comma";
 import { CartProduct } from "../../types/type";
 
-const IncorDecBtn = ({ cart }: { cart: CartProduct }) => {
+const IncorDecBtn = ({ cart }: { cart: CartProduct}) => {
   const { addItemToCart, removeItemFromCart } = useCartStore();
 
   return (

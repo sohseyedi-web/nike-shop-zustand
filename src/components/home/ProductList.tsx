@@ -2,10 +2,12 @@ import { ProductsListType } from "../../types/type";
 import * as RiIcon from "react-icons/ri";
 import { useCartStore } from "./../../store/useCart";
 import { checkInCart } from "../../utils/checkInCart";
-import { toPersianNumbersWithComma } from './../../utils/comma';
-
+import { toPersianNumbersWithComma } from "./../../utils/comma";
+import IncorDecBtn from "../common/IncorDecBtn";
 const ProductList = ({ product }: { product: ProductsListType }) => {
   const { addItemToCart, cartItems } = useCartStore();
+
+  let productQuantity = cartItems.find((c) => c.id === product.id);
 
   return (
     <div
@@ -28,7 +30,9 @@ const ProductList = ({ product }: { product: ProductsListType }) => {
         {product.name}-{" "}
         <span>{product.gender === "men" ? "مردانه" : "زنانه"}</span>
       </h2>
-      <h6 className="my-2 text-lg ">قیمت : {toPersianNumbersWithComma(product.price)} تومان</h6>
+      <h6 className="my-2 text-lg ">
+        قیمت : {toPersianNumbersWithComma(product.price)} تومان
+      </h6>
 
       <div className="my-2 flex items-center gap-x-2 text-lg font-semibold">
         سایز :
@@ -40,12 +44,7 @@ const ProductList = ({ product }: { product: ProductsListType }) => {
       </div>
       <div className="flex items-center justify-between">
         {checkInCart(cartItems, product) ? (
-          <button
-          onClick={() => addItemToCart(product)}
-          className="h-[45px] w-[45%] font-semibold text-gray-200 rounded-xl border-none bg-green-600"
-        >
-          موجود در سبد
-        </button>
+          <IncorDecBtn cart={productQuantity} />
         ) : (
           <button
             onClick={() => addItemToCart(product)}

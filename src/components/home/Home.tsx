@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 const Home = () => {
   const { searchTerm } = useCartStore();
 
+
   const filterSearch = productList.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );

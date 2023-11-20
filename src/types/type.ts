@@ -7,6 +7,7 @@ export type ProductsListType = {
   size: string[];
   oneColor: string;
   twoColor: string;
+  quantity: number;
 };
 
 export type CartProduct = ProductsListType & {
