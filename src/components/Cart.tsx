@@ -3,6 +3,7 @@ import * as RiIcon from "react-icons/ri";
 import { toPersianNumbersWithComma } from "../utils/comma";
 import IncorDecBtn from "./common/IncorDecBtn";
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 const Cart = () => {
   const { cartItems } = useCartStore();
@@ -19,7 +20,13 @@ const Cart = () => {
   );
 
   return (
-    <section className="py-7">
+    <motion.section
+      className="py-7"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ ease: "easeOut", duration: 1 }}
+    >
       <div className="max-w-7xl mx-auto flex justify-between lg:flex-row gap-y-3 flex-col">
         {hasItems ? (
           <>
@@ -29,7 +36,10 @@ const Cart = () => {
                   سبد خرید
                 </h3>
                 <button>
-                  <RiIcon.RiDeleteBin5Line size={28} className="text-red-600 dark:text-red-500" />
+                  <RiIcon.RiDeleteBin5Line
+                    size={28}
+                    className="text-red-600 dark:text-red-500"
+                  />
                 </button>
               </div>
               <hr className="my-3 dark:border-gray-700" />
@@ -94,7 +104,7 @@ const Cart = () => {
           </div>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
